@@ -32,14 +32,28 @@ namespace Practice_2
 
         private void Calculation_Click(object sender, RoutedEventArgs e)
         {
-            outputValue.Text = _myArray.GetSum();
+            try
+            {
+                outputValue.Text = _myArray.GetSum();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ошибка");
+            }
         }
 
         private void FillArray_Click(object sender, RoutedEventArgs e)
         {
-            outputValue.Clear();
-            _myArray.Fill();
-            dataGridMain.ItemsSource = _myArray.ToDataTable().DefaultView;
+            try
+            {
+                outputValue.Clear();
+                _myArray.Fill();
+                dataGridMain.ItemsSource = _myArray.ToDataTable().DefaultView;
+            }
+            catch 
+            {
+                MessageBox.Show("Ошибка");
+            }
         }
 
         private void ClearArray_Click(object sender, RoutedEventArgs e)
